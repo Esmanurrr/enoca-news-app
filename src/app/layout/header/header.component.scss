@@ -1,0 +1,40 @@
+.input-wrapper {
+    position: relative;
+
+    .svg{
+        position: absolute;
+        top: 10px;
+        left: 9px;
+    }
+
+    .input {
+        padding-block: 10px;
+        padding-inline: 30px;
+        border-radius: 20px;
+        border: none;
+        border-bottom: 1px solid #b3b3b3;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); // Daha yumuşak bir geçiş için cubic-bezier kullanıldı.
+    
+        &:focus {
+          border-bottom: 2px solid #4a90e2; // Daha belirgin bir mavi çizgi.
+          box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3); // Hafif bir gölge efekti.
+          transform: scale(1.02); // Hafif bir büyüme efekti.
+          path{
+            fill: black;
+          }
+        }
+      
+        &::placeholder {
+          color: #b3b3b3;
+          transition: color 0.3s ease-in-out; // Placeholder rengi de geçiş yapacak.
+        }
+      
+        &:focus::placeholder {
+          color: #999; // Placeholder rengi değişir.
+        }
+    
+    }
+}
