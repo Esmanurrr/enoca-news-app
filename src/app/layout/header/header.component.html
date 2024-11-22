@@ -1,18 +1,37 @@
-<div class="container">
+<div class="border-bottom">
+  <div class="container">
     <div class="row space-between align-center">
-        <div class="name">
-            <h1>Esmanur Mazlum</h1>
-        </div>
-        <div class="input-wrapper">
-            <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" color="#b3b3b3" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#b1b1b1" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-            <input type="text" class="input" placeholder="Search something..." />
-        </div>
+      <div class="name">
+        <h1>Esmanur Mazlum</h1>
+      </div>
+      <div class="input-wrapper">
+        <svg
+          class="svg"
+          xmlns="http://www.w3.org/2000/svg"
+          width="15px"
+          height="15px"
+          color="#b3b3b3"
+          viewBox="0 0 512 512"
+        >
+          <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path
+            fill="#b1b1b1"
+            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+          />
+        </svg>
+        <input type="text" class="input" placeholder="Search something..." />
+      </div>
     </div>
-    <div class="wrapper">
-        <ul class="row gap-2 mt-25">
-            <li>Anasayfa</li>
-            <li>Hakkımda</li>
-            <li>Kategori</li>
-        </ul>
+    <div class="wrapper mt-25">
+        <nav class="categories "> 
+            <ul class="row gap-2 align-center space-between wrap">
+                <li routerLink="/" class="hover-li">Home Page</li>
+                <li class="hover-li">About Me</li>
+                <li *ngFor="let category of categories">
+                    <a class="hover-li" [routerLink]="['/category', category]">{{ category | titlecase }}</a>
+                </li>
+            </ul>
+        </nav>
     </div>
+  </div>
 </div>
