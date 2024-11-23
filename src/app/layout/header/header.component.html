@@ -26,7 +26,7 @@
         <nav class="categories "> 
             <ul class="row gap-2 align-center space-between wrap">
                 <li routerLink="/" class="hover-li">Home Page</li>
-                <li class="hover-li">About Me</li>
+                <li routerLink="/about" class="hover-li">About Me</li>
                 <li *ngFor="let category of categories">
                     <a class="hover-li" [routerLink]="['/category', category]">{{ category | titlecase }}</a>
                 </li>

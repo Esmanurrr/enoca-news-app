@@ -1,0 +1,18 @@
+.paragraph {
+    margin-top: 25px;
+    padding: 15px;
+    border-inline: 1px solid black;
+}
+
+.link{
+    border: none;
+    padding-inline: 10px;
+    padding-block: 5px;
+    border-radius: 5px;
+    background-color: rgb(6, 107, 107);
+    color: #ddd;
+    &:hover {
+        background-color: rgb(169, 194, 194);
+        color: black;
+    }
+}
