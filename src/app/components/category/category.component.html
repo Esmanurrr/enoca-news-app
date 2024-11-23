@@ -1,14 +1,15 @@
 <div class="container">
     <p>category works!</p>
-    <div class="category-news">
+    <div>
         <h2>{{ category | titlecase }} News</h2>
-        <ul>
-          <li *ngFor="let article of news">
+        <div class="grid full-center gap-1 mt-25 wrap">
+          <div class="new wrap" *ngFor="let article of news">
+            <img class="new-img" src={{article.urlToImage}} alt={{article.tite}}/>
             <h3>{{ article.title }}</h3>
             <p>{{ article.description }}</p>
             <a [href]="article.url" target="_blank">Read more</a>
-          </li>
-        </ul>
+          </div>
+        </div>
     </div>
 </div>
   

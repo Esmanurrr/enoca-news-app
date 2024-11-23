@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  public categories: string[] = []; // API'den gelecek kategoriler
+  public categories: string[] = []; 
 
   constructor(private http: HttpClient) {}
 
@@ -24,9 +24,8 @@ export class HeaderComponent implements OnInit {
 
     this.http.get<any>(apiUrl).subscribe(
       (res) => {
-        // API'nin dönen kategorileri `res.sources` gibi bir yapıda olduğunu varsayıyoruz
         this.categories = Array.from(
-          new Set(res.sources.map((source: any) => source.category))
+          new Set(res.sources.map((source: any) => source.category).slice(1))
         );
         console.log('Categories:', this.categories);
       },
