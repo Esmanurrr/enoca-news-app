@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   }
 
   private fetchCategories(): void {
-    const apiUrl = `https://newsapi.org/v2/top-headlines/sources?apiKey=223d61cd6e5a43d683afc6f5405454d3`;
+    const apiUrl = `https://newsapi.org/v2/top-headlines/sources?apiKey=ec0943c1136e4d3db66172a52bc810b6`;
 
     this.http.get<any>(apiUrl).subscribe(
       (res) => {

@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit{
   }
 
   public fetchData(){
-    this.http.get<any>(`https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=223d61cd6e5a43d683afc6f5405454d3`)
+    this.http.get<any>(`https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=ec0943c1136e4d3db66172a52bc810b6`)
       .subscribe(res => {
         this.slides = res.articles.filter((article: any) => article.urlToImage).slice(0,3)
         .map((article: any) => (
