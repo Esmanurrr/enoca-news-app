@@ -11,8 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
-  public category: string = 'general'; // Varsayılan kategori
-  public news: any[] = []; // Haber makaleleri
+  public category: string = 'general'; 
+  public news: any[] = []; 
+  filteredNews: any[] = []
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
@@ -35,5 +36,17 @@ export class CategoryComponent implements OnInit {
         console.error('Error fetching news:', error);
       }
     );
+  }
+
+  filterNews(filterType: string): void {
+    if (filterType === 'newest') {
+      this.filteredNews = this.news.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+    } else if (filterType === 'oldest') {
+      this.filteredNews = this.news.sort((a, b) => new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime());
+    } else if (filterType === 'az') {
+      this.filteredNews = this.news.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (filterType === 'za') {
+      this.filteredNews = this.news.sort((a, b) => b.title.localeCompare(a.title));
+    }
   }
 }

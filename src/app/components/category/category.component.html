@@ -1,13 +1,22 @@
 <div class="container">
-    <p>category works!</p>
     <div>
         <h2>{{ category | titlecase }} News</h2>
-        <div class="grid full-center gap-1 mt-25 wrap">
-          <div class="new wrap" *ngFor="let article of news">
-            <img class="new-img" src={{article.urlToImage}} alt={{article.tite}}/>
-            <h3>{{ article.title }}</h3>
-            <p>{{ article.description }}</p>
-            <a [href]="article.url" target="_blank">Read more</a>
+        <div class="layout gap-1 mt-25 wrap">
+          <div class="filter-menu">
+            <ul>
+              <li (click)="filterNews('newest')">Latest</li>
+              <li (click)="filterNews('oldest')">Oldest</li>
+              <li (click)="filterNews('az')">A to Z</li>
+              <li (click)="filterNews('za')">Z to A</li>
+            </ul>
+          </div>
+          <div class="grid gap-1">
+            <div class="new wrap" *ngFor="let article of news">
+              <img class="new-img" src={{article.urlToImage}} alt={{article.tite}}/>
+              <h3>{{ article.title }}</h3>
+              <p>{{ article.description }}</p>
+              <a [href]="article.url" target="_blank">Read more</a>
+            </div>
           </div>
         </div>
     </div>
