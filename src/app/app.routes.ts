@@ -10,5 +10,5 @@ export const routes: Routes = [
             return import('./home/home.component').then((m) => m.HomeComponent)
         },
     },
-    { path: 'category/:category', component: CategoryComponent }, // Dinamik kategori rotası
+    { path: 'category/:category', component: CategoryComponent }, 
 ];

@@ -16,12 +16,12 @@
         outline: none;
         background-color: transparent;
         cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); // Daha yumuşak bir geçiş için cubic-bezier kullanıldı.
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
     
         &:focus {
-          border-bottom: 2px solid #4a90e2; // Daha belirgin bir mavi çizgi.
-          box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3); // Hafif bir gölge efekti.
-          transform: scale(1.02); // Hafif bir büyüme efekti.
+          border-bottom: 2px solid #4a90e2;
+          box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3); 
+          transform: scale(1.02); 
           path{
             fill: black;
           }
@@ -29,11 +29,11 @@
       
         &::placeholder {
           color: #b3b3b3;
-          transition: color 0.3s ease-in-out; // Placeholder rengi de geçiş yapacak.
+          transition: color 0.3s ease-in-out; 
         }
       
         &:focus::placeholder {
-          color: #999; // Placeholder rengi değişir.
+          color: #999; 
         }
     
     }
